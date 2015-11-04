@@ -66,3 +66,32 @@ To use `clang-check` to lint the source tree:
 
     clang-check -analyze -p build *.cc
 
+## Example
+
+### SLM
+
+Openivi-html5 intgrates with the Genivi Software Management. There are full instructions for running the Genivi Software Manager at its [README](https://github.com/cajun-rat/genivi_software_management) but here are the condensed instructions to run it with openivi-html5.
+
+First, follow the openivi-html5 README instructions to build and run it. After the "Run" step you should see the Getting Started screen.
+
+When that is complete, in a new terminal clone the Genivi Software Management repo somewhere.
+
+    git clone git@github.com:cajun-rat/genivi_software_management.git
+    cd genivi_software_management/
+    git checkout feat/hmi-api
+
+Now start the software loading manager (note that this opens 5 terminals) by running:
+
+    sh start_swm.sh
+
+Back in the openivi-html5 window, click on the menu item "File -> Open File" and open openivi-html5/example/demo.html
+
+You should see "There are 0 updates available"
+
+Now in another new terminal, navigate to genivi_software_management and run:
+
+    python sota_client.py
+
+You should see the update appear in the openivi-html5 gui along with the text "Awaiting Approval. There are 1 updates available". To start the update hit the "Approve Updates" button.
+
+The openivi-html5 gui should show the update installing, then return to the "There are 0 updates available" state.
