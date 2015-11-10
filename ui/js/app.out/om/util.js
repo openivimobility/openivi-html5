@@ -2,9 +2,9 @@
 goog.provide('om.util');
 goog.require('cljs.core');
 om.util.force_children = (function om$util$force_children(x){
-var G__8846 = x;
-var G__8846__$1 = ((cljs.core.seq_QMARK_.call(null,x))?cljs.core.into.call(null,cljs.core.PersistentVector.EMPTY,cljs.core.map.call(null,om$util$force_children),G__8846):G__8846);
-return G__8846__$1;
+var G__6279 = x;
+var G__6279__$1 = ((cljs.core.seq_QMARK_.call(null,x))?cljs.core.into.call(null,cljs.core.PersistentVector.EMPTY,cljs.core.map.call(null,om$util$force_children),G__6279):G__6279);
+return G__6279__$1;
 });
 
 //# sourceMappingURL=util.js.map

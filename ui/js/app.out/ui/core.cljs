@@ -236,7 +236,12 @@
                                                         :value destination
                                                         :onChange #(om/set-state! this {:destination
                                                                                         (.-value (.-target %))})})
-                                        (dom/button #js {:onClick #(go (>! routing destination))}
+                                        (dom/button #js {:onClick (fn [e]
+                                                               (js/console.log e)
+                                                               (go (>! routing destination))
+                                                               (.stopPropagation e)
+                                                               (.preventDefault e)
+                                                               false)}
                                                     "Directions")))
                      (remaining-range-view {:car/remaining-range remaining-range})))))
 
@@ -297,6 +302,9 @@
                        ; Uncomment this if you want the map to follow the GPS
                        #_(gps/start #(go (>! gps-positions %)))
                        (gps/location #(go (>! gps-positions %))) ; and also comment this out
+
+                       ; center in berlin by default for the QT app
+                       (go (>! gps-positions {:latitude 52.5167 :longitude 13.3833}))
 
                        (software-updates/watch
                         (fn [{:keys [name version size status]}]
@@ -430,4 +438,5 @@
 
 (defn init []
   (om/add-root! reconciler
-                RootView (gdom/getElement "app")))
+                RootView (gdom/getElement "app"))
+  (secretary/dispatch! "/route"))

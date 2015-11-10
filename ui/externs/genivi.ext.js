@@ -1,7 +1,12 @@
 var genivi = {
     slm: {
         approve: function() {},
-        details_changed: function() {},
+        update_state_changed: {
+            connect: function() {}
+        },
+        details_changed: {
+            connect: function() {}
+        },
         details: function() {}
     }
 };

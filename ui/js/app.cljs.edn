@@ -1,2 +1,1 @@
-{:require  [ui.core]
- :init-fns [ui.core/init]}
+{:require [ui.core adzerk.boot-cljs-repl adzerk.boot-reload], :init-fns [ui.core/init]}

@@ -35,11 +35,11 @@ var this__5782__auto____$1 = this;
 return cljs.core._lookup.call(null,this__5782__auto____$1,k__5783__auto__,null);
 });
 
-ui.gps.Position.prototype.cljs$core$ILookup$_lookup$arity$3 = (function (this__5784__auto__,k16251,else__5785__auto__){
+ui.gps.Position.prototype.cljs$core$ILookup$_lookup$arity$3 = (function (this__5784__auto__,k18184,else__5785__auto__){
 var self__ = this;
 var this__5784__auto____$1 = this;
-var G__16253 = (((k16251 instanceof cljs.core.Keyword))?k16251.fqn:null);
-switch (G__16253) {
+var G__18186 = (((k18184 instanceof cljs.core.Keyword))?k18184.fqn:null);
+switch (G__18186) {
 case "latitude":
 return self__.latitude;
 
@@ -53,7 +53,7 @@ return self__.timestamp;
 
 break;
 default:
-return cljs.core.get.call(null,self__.__extmap,k16251,else__5785__auto__);
+return cljs.core.get.call(null,self__.__extmap,k18184,else__5785__auto__);
 
 }
 });
@@ -71,10 +71,10 @@ return cljs.core.pr_sequential_writer.call(null,writer__5797__auto__,pr_pair__57
 
 ui.gps.Position.prototype.cljs$core$IIterable$ = true;
 
-ui.gps.Position.prototype.cljs$core$IIterable$_iterator$arity$1 = (function (G__16250){
+ui.gps.Position.prototype.cljs$core$IIterable$_iterator$arity$1 = (function (G__18183){
 var self__ = this;
-var G__16250__$1 = this;
-return (new cljs.core.RecordIter((0),G__16250__$1,3,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"latitude","latitude",394867543),new cljs.core.Keyword(null,"longitude","longitude",-1268876372),new cljs.core.Keyword(null,"timestamp","timestamp",579478971)], null),cljs.core._iterator.call(null,self__.__extmap)));
+var G__18183__$1 = this;
+return (new cljs.core.RecordIter((0),G__18183__$1,3,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"latitude","latitude",394867543),new cljs.core.Keyword(null,"longitude","longitude",-1268876372),new cljs.core.Keyword(null,"timestamp","timestamp",579478971)], null),cljs.core._iterator.call(null,self__.__extmap)));
 });
 
 ui.gps.Position.prototype.cljs$core$IMeta$_meta$arity$1 = (function (this__5780__auto__){
@@ -140,21 +140,21 @@ return (new ui.gps.Position(self__.latitude,self__.longitude,self__.timestamp,se
 }
 });
 
-ui.gps.Position.prototype.cljs$core$IAssociative$_assoc$arity$3 = (function (this__5789__auto__,k__5790__auto__,G__16250){
+ui.gps.Position.prototype.cljs$core$IAssociative$_assoc$arity$3 = (function (this__5789__auto__,k__5790__auto__,G__18183){
 var self__ = this;
 var this__5789__auto____$1 = this;
-var pred__16254 = cljs.core.keyword_identical_QMARK_;
-var expr__16255 = k__5790__auto__;
-if(cljs.core.truth_(pred__16254.call(null,new cljs.core.Keyword(null,"latitude","latitude",394867543),expr__16255))){
-return (new ui.gps.Position(G__16250,self__.longitude,self__.timestamp,self__.__meta,self__.__extmap,null));
+var pred__18187 = cljs.core.keyword_identical_QMARK_;
+var expr__18188 = k__5790__auto__;
+if(cljs.core.truth_(pred__18187.call(null,new cljs.core.Keyword(null,"latitude","latitude",394867543),expr__18188))){
+return (new ui.gps.Position(G__18183,self__.longitude,self__.timestamp,self__.__meta,self__.__extmap,null));
 } else {
-if(cljs.core.truth_(pred__16254.call(null,new cljs.core.Keyword(null,"longitude","longitude",-1268876372),expr__16255))){
-return (new ui.gps.Position(self__.latitude,G__16250,self__.timestamp,self__.__meta,self__.__extmap,null));
+if(cljs.core.truth_(pred__18187.call(null,new cljs.core.Keyword(null,"longitude","longitude",-1268876372),expr__18188))){
+return (new ui.gps.Position(self__.latitude,G__18183,self__.timestamp,self__.__meta,self__.__extmap,null));
 } else {
-if(cljs.core.truth_(pred__16254.call(null,new cljs.core.Keyword(null,"timestamp","timestamp",579478971),expr__16255))){
-return (new ui.gps.Position(self__.latitude,self__.longitude,G__16250,self__.__meta,self__.__extmap,null));
+if(cljs.core.truth_(pred__18187.call(null,new cljs.core.Keyword(null,"timestamp","timestamp",579478971),expr__18188))){
+return (new ui.gps.Position(self__.latitude,self__.longitude,G__18183,self__.__meta,self__.__extmap,null));
 } else {
-return (new ui.gps.Position(self__.latitude,self__.longitude,self__.timestamp,self__.__meta,cljs.core.assoc.call(null,self__.__extmap,k__5790__auto__,G__16250),null));
+return (new ui.gps.Position(self__.latitude,self__.longitude,self__.timestamp,self__.__meta,cljs.core.assoc.call(null,self__.__extmap,k__5790__auto__,G__18183),null));
 }
 }
 }
@@ -166,10 +166,10 @@ var this__5794__auto____$1 = this;
 return cljs.core.seq.call(null,cljs.core.concat.call(null,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [(new cljs.core.PersistentVector(null,2,(5),cljs.core.PersistentVector.EMPTY_NODE,[new cljs.core.Keyword(null,"latitude","latitude",394867543),self__.latitude],null)),(new cljs.core.PersistentVector(null,2,(5),cljs.core.PersistentVector.EMPTY_NODE,[new cljs.core.Keyword(null,"longitude","longitude",-1268876372),self__.longitude],null)),(new cljs.core.PersistentVector(null,2,(5),cljs.core.PersistentVector.EMPTY_NODE,[new cljs.core.Keyword(null,"timestamp","timestamp",579478971),self__.timestamp],null))], null),self__.__extmap));
 });
 
-ui.gps.Position.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (this__5781__auto__,G__16250){
+ui.gps.Position.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (this__5781__auto__,G__18183){
 var self__ = this;
 var this__5781__auto____$1 = this;
-return (new ui.gps.Position(self__.latitude,self__.longitude,self__.timestamp,G__16250,self__.__extmap,self__.__hash));
+return (new ui.gps.Position(self__.latitude,self__.longitude,self__.timestamp,G__18183,self__.__extmap,self__.__hash));
 });
 
 ui.gps.Position.prototype.cljs$core$ICollection$_conj$arity$2 = (function (this__5787__auto__,entry__5788__auto__){
@@ -200,8 +200,8 @@ ui.gps.__GT_Position = (function ui$gps$__GT_Position(latitude,longitude,timesta
 return (new ui.gps.Position(latitude,longitude,timestamp,null,null,null));
 });
 
-ui.gps.map__GT_Position = (function ui$gps$map__GT_Position(G__16252){
-return (new ui.gps.Position(new cljs.core.Keyword(null,"latitude","latitude",394867543).cljs$core$IFn$_invoke$arity$1(G__16252),new cljs.core.Keyword(null,"longitude","longitude",-1268876372).cljs$core$IFn$_invoke$arity$1(G__16252),new cljs.core.Keyword(null,"timestamp","timestamp",579478971).cljs$core$IFn$_invoke$arity$1(G__16252),null,cljs.core.dissoc.call(null,G__16252,new cljs.core.Keyword(null,"latitude","latitude",394867543),new cljs.core.Keyword(null,"longitude","longitude",-1268876372),new cljs.core.Keyword(null,"timestamp","timestamp",579478971)),null));
+ui.gps.map__GT_Position = (function ui$gps$map__GT_Position(G__18185){
+return (new ui.gps.Position(new cljs.core.Keyword(null,"latitude","latitude",394867543).cljs$core$IFn$_invoke$arity$1(G__18185),new cljs.core.Keyword(null,"longitude","longitude",-1268876372).cljs$core$IFn$_invoke$arity$1(G__18185),new cljs.core.Keyword(null,"timestamp","timestamp",579478971).cljs$core$IFn$_invoke$arity$1(G__18185),null,cljs.core.dissoc.call(null,G__18185,new cljs.core.Keyword(null,"latitude","latitude",394867543),new cljs.core.Keyword(null,"longitude","longitude",-1268876372),new cljs.core.Keyword(null,"timestamp","timestamp",579478971)),null));
 });
 
 ui.gps.new_position = (function ui$gps$new_position(position){
@@ -221,18 +221,18 @@ return console.error("Geolocation is not supported by this browser.");
 }
 });
 ui.gps.start = (function ui$gps$start(f){
-return ui.gps.with_gps.call(null,(function (p1__16258_SHARP_){
-return p1__16258_SHARP_.watchPosition(cljs.core.comp.call(null,f,ui.gps.new_position));
+return ui.gps.with_gps.call(null,(function (p1__18191_SHARP_){
+return p1__18191_SHARP_.watchPosition(cljs.core.comp.call(null,f,ui.gps.new_position));
 }));
 });
 ui.gps.location = (function ui$gps$location(f){
-return ui.gps.with_gps.call(null,(function (p1__16259_SHARP_){
-return p1__16259_SHARP_.getCurrentPosition(cljs.core.comp.call(null,f,ui.gps.new_position));
+return ui.gps.with_gps.call(null,(function (p1__18192_SHARP_){
+return p1__18192_SHARP_.getCurrentPosition(cljs.core.comp.call(null,f,ui.gps.new_position));
 }));
 });
 ui.gps.stop = (function ui$gps$stop(){
-return ui.gps.with_gps.call(null,(function (p1__16260_SHARP_){
-return p1__16260_SHARP_.clearWatch();
+return ui.gps.with_gps.call(null,(function (p1__18193_SHARP_){
+return p1__18193_SHARP_.clearWatch();
 }));
 });
 
