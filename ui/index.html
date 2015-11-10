@@ -21,123 +21,17 @@
 <body>
     <div id="app">
     </div>
-
-  <!-- <ul class="side-nav"> -->
-  <!--   <li class="route"><a>Route</a></li> -->
-  <!--   <li class="fuel-stop"><a>Fuel</a></li> -->
-  <!--   <li class="poi"><a>POI</a></li> -->
-  <!--   <li class="user-profiles"><a>User</a></li> -->
-  <!--   <li class="updates" style="display: none"><span class="count">0</span><a>Updates Available</a></li> -->
-  <!--   <li class="settings" style="display: none""><a></a></li> -->
-  <!-- </ul> -->
-  <!-- <div class="top-nav"> -->
-  <!--   <span class="top-logo"> -->
-  <!--   </span> -->
-  <!--   <span class="top-user-icon"> -->
-  <!--     <span class="top-user-greeting"> -->
-  <!--       Hi, <span class="top-user-name">guest</span> -->
-  <!--     </span> -->
-  <!--   </span> -->
-  <!-- </div> -->
-  <!-- <div id="features"> -->
-  <!--   <div id="route" style="display: none"> -->
-  <!--     <h2>Route</h2> -->
-  <!--     <form id="route" class="routing"> -->
-  <!--       <label>To:</label><input class="destination" type="text" value="Hamburg"/> -->
-  <!--       <input type="submit" id="planroute" value="Directions"/> -->
-  <!--       <div class="start error"></div> -->
-  <!--       <div class="destination error"></div> -->
-  <!--     </form> -->
-  <!--     <div class="remaining-range"><span class="range">0KM</span></div> -->
-  <!--   </div> -->
-  <!--   <div id="fuel-stop" style="display: none"> -->
-  <!--     <h2>Fuel Stop</h2> -->
-  <!--     <table> -->
-  <!--       <tr><td>You must select a route first.</td></tr> -->
-  <!--     </table> -->
-  <!--   </div> -->
-  <!--   <div id="poi" style="display: none"> -->
-  <!--     <h2>Points of Interest</h2> -->
-  <!--     <ul> -->
-  <!--       <li class="bmw">BMW</li> -->
-  <!--       <li class="mercedes">Mercedes</li> -->
-  <!--       <li class="cafe">Cafe</li> -->
-  <!--     </ul> -->
-  <!--     <\!-- <div class="remaining-range"><span class="range">0KM</span></div> -\-> -->
-  <!--   </div> -->
-  <!--   <div id="user-profiles" style="display: none"> -->
-  <!--     <h2>User Profiles</h2> -->
-  <!--     <div class="login-form"> -->
-  <!--       <p class="info">Enter your numeric PIN to log in.</p> -->
-  <!--       <form id="login-form"> -->
-  <!--         <input type="tel" name="pin" maxlength="4"></input> -->
-  <!--       </form> -->
-  <!--       <p class="error"></p> -->
-  <!--       <a class="back">BACK</a> -->
-  <!--     </div> -->
-  <!--     <div class="user-form"> -->
-  <!--       <p class="info">Enter your username.</p> -->
-  <!--       <form id="user-form"> -->
-  <!--         <input name="username"></input> -->
-  <!--       </form> -->
-  <!--       <a class="back">BACK</a> -->
-  <!--       <a class="login">LOG IN</a> -->
-  <!--     </div> -->
-  <!--     <div class="user-list"> -->
-  <!--       <p class="info">Log in with your user and PIN to gain access to more POIs along your route.</p> -->
-  <!--       <ul class="users"> -->
-  <!--       </ul> -->
-  <!--     </div> -->
-  <!--   </div> -->
-  <!--   <div id="updates" style="display: none"> -->
-  <!--   </div> -->
-  <!--   <div id="settings" style="display: none"> -->
-  <!--     <form> -->
-  <!--       <label>POI server address -->
-  <!--         <input type="text"  name="poiserver"/> -->
-  <!--       </label> -->
-  <!--       <label>Auth+ server address -->
-  <!--         <input type="text"  name="authplusserver"/> -->
-  <!--       </label> -->
-  <!--       <label>POI recommender server address -->
-  <!--         <input type="text" name="poirecommenderserver"/> -->
-  <!--       </label> -->
-  <!--       <label>Car status server address -->
-  <!--         <input type="text" name="carstatusserver"/> -->
-  <!--       </label> -->
-  <!--       <table> -->
-  <!--         <tr> -->
-  <!--           <td> -->
-  <!--             <label>Fuel Tank in liters -->
-  <!--               <input type="text" name="fueltankliters"/> -->
-  <!--             </label> -->
-  <!--           </td> -->
-  <!--           <td> -->
-  <!--             <label>VIN -->
-  <!--               <input type="text" name="vin"/> -->
-  <!--             </label> -->
-  <!--           </td> -->
-  <!--         </tr> -->
-  <!--       </table> -->
-  <!--       <input type="submit" value="Save"/> -->
-  <!--       <input type="submit" id="clear-local-storage" value="Clear Local Storage"/> -->
-  <!--     </form> -->
-  <!--   </div> -->
-  <!-- </div> -->
-  <!-- <div id="map"></div> -->
-  <!-- <div id="container"></div> -->
-
-    <!--   <script type="text/javascript" src="js/leaflet.encoded.js"></script>
-    -->
   <script>
    if (typeof(genivi) == 'undefined') {
        var error = function() {
            console.error("genivi.slm is not available.")
        }
+       var signal = { connect: error }
        genivi = {
            slm: {
                approve: error,
-               details_changed: error,
+               details_changed: signal,
+               update_state_changed: signal,
                details: function() {
                    error();
                    return [];
@@ -147,8 +41,6 @@
    }
   </script>
   <script type="text/javascript" src="js/app.js"></script>
-
-  <!--   <script type="text/javascript" src="js/legacy.min.js"></script>
-  -->
+  <script type="text/javascript" src="js/leaflet.encoded.js"></script>
 </body>
 

@@ -67,6 +67,10 @@
          :cljs (satisfies? IWithMeta x'))
       (vary-meta assoc :om-path path))))
 
+(defn rethrow? [x]
+  (and (instance? #?(:clj clojure.lang.ExceptionInfo :cljs ExceptionInfo) x)
+       (= :om.next/abort (-> x ex-data :type))))
+
 (defn parser [{:keys [read mutate] :as config}]
   (fn self
     ([env sel] (self env sel nil))
@@ -76,9 +80,12 @@
            (cond-> (assoc env :parser self :target target)
              (not (contains? env :path)) (assoc :path []))]
        (letfn [(step [ret expr]
-                 (let [{:keys [key dkey params sel] :as ast} (expr->ast expr)
-                       env   (cond-> (assoc env :ast ast)
-                               (not (nil? sel)) (assoc :selector sel))
+                 (let [{sel' :sel :keys [key dkey params] :as ast} (expr->ast expr)
+                       env   (as-> (assoc env :ast ast) env
+                               (if (= '... sel')
+                                 (assoc env :selector sel)
+                                 (cond-> env
+                                   (not (nil? sel')) (assoc :selector sel'))))
                        type  (:type ast)
                        call? (= :call type)
                        res   (when (nil? (:target ast))
@@ -101,10 +108,10 @@
                          (when (and call? (not (nil? (:action res))))
                            (try
                              ((:action res))
-                             #?(:clj  (catch Throwable e
-                                        (reset! error e))
-                                :cljs (catch :default e
-                                        (reset! error e)))))
+                             (catch #?(:clj Throwable :cljs :default) e
+                               (if (rethrow? e)
+                                 (throw e)
+                                 (reset! error e)))))
                          (let [value (:value res)]
                            (cond-> ret
                              (not (nil? value)) (assoc key value)

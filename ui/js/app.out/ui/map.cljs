@@ -50,7 +50,7 @@
                                          :maxZoom 18}))]
     (.addTo zoom-control map)
     (.addTo tile-layer map)
-    (.setView map #js[13.3833 52.5167] 13)
+    (.setView map #js[52.5167 13.3833] 13)
     map))
 
 (defui MapView

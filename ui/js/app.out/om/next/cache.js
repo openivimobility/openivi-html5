@@ -1,4 +1,4 @@
-// Compiled by ClojureScript 1.7.166 {}
+// Compiled by ClojureScript 1.7.170 {}
 goog.provide('om.next.cache');
 goog.require('cljs.core');
 
@@ -15,11 +15,11 @@ om.next.cache.Cache.prototype.add = (function (id,x){
 var self__ = this;
 var this$ = this;
 if((self__.size <= self__.arr.length)){
-var id_SINGLEQUOTE__7176 = self__.arr.shift();
-cljs.core.swap_BANG_.call(null,self__.index,((function (id_SINGLEQUOTE__7176,this$){
-return (function (p1__7175_SHARP_){
-return cljs.core.assoc.call(null,cljs.core.dissoc.call(null,p1__7175_SHARP_,id_SINGLEQUOTE__7176),id,x);
-});})(id_SINGLEQUOTE__7176,this$))
+var id_SINGLEQUOTE__7044 = self__.arr.shift();
+cljs.core.swap_BANG_.call(null,self__.index,((function (id_SINGLEQUOTE__7044,this$){
+return (function (p1__7043_SHARP_){
+return cljs.core.assoc.call(null,cljs.core.dissoc.call(null,p1__7043_SHARP_,id_SINGLEQUOTE__7044),id,x);
+});})(id_SINGLEQUOTE__7044,this$))
 );
 } else {
 cljs.core.swap_BANG_.call(null,self__.index,cljs.core.assoc,id,x);
@@ -42,8 +42,8 @@ om.next.cache.Cache.cljs$lang$type = true;
 
 om.next.cache.Cache.cljs$lang$ctorStr = "om.next.cache/Cache";
 
-om.next.cache.Cache.cljs$lang$ctorPrWriter = (function (this__5758__auto__,writer__5759__auto__,opt__5760__auto__){
-return cljs.core._write.call(null,writer__5759__auto__,"om.next.cache/Cache");
+om.next.cache.Cache.cljs$lang$ctorPrWriter = (function (this__5766__auto__,writer__5767__auto__,opt__5768__auto__){
+return cljs.core._write.call(null,writer__5767__auto__,"om.next.cache/Cache");
 });
 
 om.next.cache.__GT_Cache = (function om$next$cache$__GT_Cache(arr,index,size){

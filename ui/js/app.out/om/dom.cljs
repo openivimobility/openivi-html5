@@ -3,6 +3,7 @@
   (:require-macros [om.dom :as dom])
   (:require [cljsjs.react]
             [cljsjs.react.dom]
+            [om.util :as util]
             [goog.object :as gobj]))
 
 (dom/gen-react-dom-fns)
@@ -48,12 +49,12 @@
 (defn render
   "Equivalent to React.render"
   [component el]
-  (js/React.render component el))
+  (js/ReactDOM.render component el))
 
 (defn render-to-str
   "Equivalent to React.renderToString"
   [c]
-  (js/React.renderToString c))
+  (js/ReactDOMServer.renderToString c))
 
 (defn node
   "Returns the dom node associated with a component's React ref."
