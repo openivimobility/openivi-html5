@@ -1,0 +1,40 @@
+#map {
+	/* Stop copyright information spilling off the bottom */
+	line-height: 10px;
+}
+
+label, input, #pagemaps .routing .status {
+	font-family: Akkurat;
+	font-weight: bold;
+	font-size: 24px;
+}
+
+input {
+	margin-bottom: 5px;
+	padding-left: 5px;
+}
+
+.error {
+	color: red;
+	font-size: 16pt;
+}
+
+/* For the weather graph */
+#graph .axis path,
+#graph .axis line {
+	fill: none;
+	stroke: #015083;
+	shape-rendering: crispEdges;
+}
+
+#graph .axis text {
+	fill: white;
+	font-family: sans-serif;
+	font-size: 11px;
+}
+
+#graph path {
+	stroke: #3aaeff;
+	stroke-width: 2;
+	fill: none;
+}
