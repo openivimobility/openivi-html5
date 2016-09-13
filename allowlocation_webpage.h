@@ -29,7 +29,7 @@ class AllowLocationWebPage : public QWebPage {
   AllowLocationWebPage(QObject* parent = 0);
 
  private slots:
-  void permissionRequested(QWebFrame* frame, Feature feature);
+  void permissionRequested(QWebFrame* frame, QWebPage::Feature feature);
 };
 
 /* vim: set expandtab tabstop=2 shiftwidth=2: */
